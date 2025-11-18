@@ -1,0 +1,1200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #fff;
+    color: #1a1d2b;
+    line-height: 1.6;
+}
+
+:root {
+    --clr-primary: #1b63ff;
+    --clr-primary-dark: #0046d7;
+    --clr-accent: #dd4632;
+    --clr-muted: #667085;
+    --clr-light: #f5f7fb;
+    --clr-border: #e4e8f3;
+    --radius-lg: 20px;
+    --radius-md: 12px;
+    --radius-sm: 8px;
+    --shadow-soft: 0 25px 60px rgba(15, 26, 67, 0.08);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+}
+
+a:focus,
+a:hover {
+    color: var(--clr-primary-dark);
+}
+
+/* ------------------------------------------
+   HEADER BASE
+------------------------------------------ */
+/* ====================================================
+   HEADER WRAPPER (New Dark + Glass Feel)
+==================================================== */
+#masthead {
+    width: 100%;
+    background: rgba(20, 20, 20, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 14px 0;
+    position: sticky;
+    top: 0;
+    z-index: 9000;
+    transition: all 0.3s ease;
+}
+
+/* Container Inside */
+.elementor-12 > header {
+    max-width: 1250px;
+    margin: auto;
+    padding: 0 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* ====================================================
+   LOGO (New Minimal Look)
+==================================================== */
+.elementor-widget-image img {
+    width: 220px;
+    height: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.95;
+    transition: 0.3s ease;
+}
+
+.elementor-widget-image img:hover {
+    opacity: 1;
+    transform: translateY(-1px);
+}
+
+/* ====================================================
+   MENU (New Neon Accent)
+==================================================== */
+.hfe-nav-menu__layout-horizontal ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+.hfe-nav-menu__layout-horizontal ul li a {
+    text-decoration: none;
+    color: #e2e2e2;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    position: relative;
+    padding-bottom: 4px;
+    transition: 0.25s ease;
+}
+
+/* Underline Glow */
+.hfe-nav-menu__layout-horizontal ul li a::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: #4ea1ff;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    border-radius: 6px;
+    box-shadow: 0 0 6px #3479fa;
+    transition: width 0.3s ease;
+}
+
+.hfe-nav-menu__layout-horizontal ul li a:hover,
+.hfe-nav-menu .current-menu-item a {
+    color: #4ea9ff;
+}
+
+.hfe-nav-menu__layout-horizontal ul li a:hover::after,
+.hfe-nav-menu .current-menu-item a::after {
+    width: 100%;
+}
+
+
+/* ====================================================
+   CALL BUTTON (New Round + Glow)
+==================================================== */
+#phone {
+    background: linear-gradient(135deg, #4e95ff, #26c7a8);
+    color: #000;
+    padding: 10px 15px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    box-shadow: 0 0 12px rgba(78, 255, 197, 0.4);
+    transition: 0.3s ease;
+}
+
+/* Hover */
+#phone:hover {
+    background: linear-gradient(135deg, #2a86ff, #1467b5);
+    transform: translateY(-2px);
+    box-shadow: 0 0 18px rgba(53, 71, 236, 0.55);
+}
+
+/* Icon */
+#phone svg {
+    width: 18px;
+    height: 18px;
+    fill: #000;
+    transition: 0.3s ease;
+}
+
+#phone:hover svg {
+    transform: rotate(12deg) scale(1.15);
+}
+
+/* ====================================================
+   RESPONSIVE
+==================================================== */
+@media (max-width: 768px) {
+    .elementor-12 > header {
+        padding: 0 18px;
+    }
+
+    .elementor-widget-image img {
+        width: 180px;
+    }
+
+    .hfe-nav-menu__layout-horizontal ul {
+        gap: 22px;
+    }
+
+    #phone {
+        padding: 10px 20px;
+    }
+}
+
+
+/* =====================================
+   FULL SCREEN BANNER (SUPER CLEAR)
+===================================== */
+
+.elementor-element-2b51bea {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Background Image */
+.elementor-element-999a746 {
+    position: absolute;
+    inset: 0;
+}
+
+.elementor-element-999a746 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(85%) contrast(105%);
+}
+
+/* Dark Overlay */
+.elementor-element-2b51bea::before {
+    content: "";
+    position: absolute;
+    background: rgb(255, 254, 254);
+    z-index: 1;
+}
+
+/* =====================================
+   FORM – CLEAN, CENTERED ALWAYS
+===================================== */
+
+/* ---------- FORM WRAPPER (Floating on Banner) ---------- */
+.form-wrapper {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 15px;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  font-family: Arial, sans-serif;
+
+  position: absolute;
+  top: 45%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+
+  z-index: 999; /* Form stays above the banner */
+}
+
+/* ---------- TITLE ---------- */
+.form-wrapper h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1b63ff;
+  font-size: 22px;
+}
+
+/* ---------- LABELS ---------- */
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+/* ---------- INPUTS ---------- */
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  outline: none;
+}
+
+input:focus, textarea:focus {
+  border-color: #1b63ff;
+  box-shadow: 0 0 5px rgba(27, 99, 255, 0.4);
+}
+
+/* ---------- BUTTON ---------- */
+button {
+  width: 100%;
+  padding: 12px;
+  background: #1b63ff;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #0046d7;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 600px) {
+  .form-wrapper {
+    max-width: 90%;
+    padding: 20px;
+    top: 50%;
+  }
+
+  .form-wrapper h2 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 400px) {
+  .form-wrapper {
+    padding: 18px;
+  }
+
+  input, textarea {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  button {
+    font-size: 15px;
+    padding: 10px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Card Container: No change, maintains layout */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Reduced gap */
+    gap: 20px;
+   
+}
+
+/* Card width: Reduced from 27.33% to 25% for a tighter 3-per-row look with 20px gap */
+.premium-card {
+    /* Slightly smaller card width */
+    flex: 0 0 30%; 
+    box-sizing: border-box;
+    /* Reduced margin-bottom */
+    margin-bottom: 20px; 
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* Slightly smaller border radius */
+    border-radius: 15px; 
+    overflow: hidden;
+    /* New: Light Blue/Grey Background */
+    background-color: #f7f9fc; 
+}
+
+.premium-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* Card Header: New Gradient (Cool Blues/Purples) */
+.card-header {
+    text-align: center;
+    padding: 15px; /* Reduced padding */
+    /* New: Blue/Purple Gradient */
+    background: linear-gradient(45deg, #12248b, #46099b);
+    color: white;
+}
+
+.title-plan {
+    font-size: 1.3rem; /* Reduced font size */
+    font-weight: 700;
+}
+
+.speed {
+    margin-top: 5px;
+    font-weight: 500;
+    color: #e0e0e0;
+}
+
+/* Card Body */
+.card-body {
+    padding: 15px; /* Reduced padding */
+    /* New: Very light background */
+    background-color: #ffffff;
+}
+
+/* Price */
+.price {
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: inline-block;
+    padding: 3px 8px; /* Reduced padding */
+    border-radius: 12px;
+    /* New: Light Blue Accent */
+    background-color: #b3ccff;
+    color: #1e3c72;
+}
+
+.amount {
+    font-size: 1.8rem; /* Reduced font size */
+    font-weight: bold;
+    margin-bottom: 10px; /* Reduced margin */
+    display: inline-block;
+    padding: 4px 12px; /* Reduced padding */
+    border-radius: 15px;
+    /* New: Stronger Blue/Purple Gradient */
+    background: linear-gradient(90deg, #2c085f, #02168d);
+    color: white;
+}
+
+/* Features */
+.features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0; /* Reduced margin */
+}
+
+.features li {
+    display: flex;
+    align-items: center;
+    padding: 8px; /* Reduced padding */
+    margin-bottom: 8px; /* Reduced margin */
+    border-radius: 10px;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Unique background for each feature - New softer, cooler pastels */
+.features li:nth-child(1) { background-color: #e6e6ff; } /* Light Lavender */
+.features li:nth-child(2) { background-color: #d8f0ff; } /* Pale Cyan */
+.features li:nth-child(3) { background-color: #ffe0f0; } /* Pale Pink */
+.features li:nth-child(4) { background-color: #e0fff0; } /* Pale Mint */
+.features li:nth-child(5) { background-color: #ffffcc; } /* Pale Yellow */
+
+.features li .icon {
+    margin-right: 8px; /* Reduced margin */
+}
+
+/* Button: New Gradient (Dark Blues) */
+.btn-get {
+    padding: 10px 20px; /* Reduced padding */
+    border: none;
+    border-radius: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    /* New: Darker Blue Gradient */
+    background: linear-gradient(45deg, #1a2a6c, #1e3c72);
+    color: white;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-get:hover {
+    transform: scale(1.04);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+/* Responsive: Adjusted for the new, smaller base width */
+@media (max-width: 1024px) {
+    .premium-card {
+        /* Adjusted to fit 2 per row better */
+        flex: 0 0 45%; 
+    }
+}
+
+@media (max-width: 750px) {
+    .premium-card {
+        flex: 0 0 100%;
+    }
+}
+/* bannerimage section */
+
+
+/* Full Screen Banner Container */
+.banner-container {
+    position: relative;       /* overlay image ke liye relative */
+    width: 100vw;             /* viewport width */
+    height: 70vh;            /* viewport height */
+    overflow: hidden;
+}
+
+/* Main Banner Image - full cover */
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;        /* image stretch but maintain aspect ratio */
+    display: block;
+}
+
+/* Overlay Image */
+.overlay-image {
+    position: absolute;
+    top: 10%;                 /* banner ke top se distance */
+    left: 10%;                /* banner ke left se distance */
+    width: 650px;             /* chhoti image size */
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s;
+}
+
+.overlay-image:hover {
+    transform: scale(1.1);    /* hover effect */
+}
+/* ===============================
+   📱 Mobile: max 480px
+================================ */
+@media (max-width: 480px) {
+
+    .banner-container {
+        height: 40vh;                 /* smaller height */
+    }
+
+    .overlay-image {
+        width: 70%;                   /* auto adjust */
+        height: auto;
+        top: 50%;                     /* center vertically */
+        left: 50%;                    /* center horizontally */
+        transform: translate(-50%, -50%);
+        border-radius: 8px;
+    }
+
+    .overlay-image:hover {
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+}
+
+
+/* ===============================
+   📱 Tablets: max 768px
+================================ */
+@media (max-width: 768px) {
+
+    .banner-container {
+        height: 50vh;
+    }
+
+    .overlay-image {
+        width: 55%;
+        height: auto;
+        top: 15%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .overlay-image:hover {
+        transform: translateX(-50%) scale(1.08);
+    }
+}
+
+
+/* ===============================
+   💻 Laptops: max 1200px
+================================ */
+@media (max-width: 1200px) {
+
+    .banner-container {
+        height: 60vh;
+    }
+
+    .overlay-image {
+        width: 450px;
+        height: auto;
+    }
+}
+
+/* samll card section */
+/* Container for all cards */
+/* Section Title */
+.top-reasons-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.card-containers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    bottom: 120px;
+    background-color: #001d9c;
+    color: white;
+    padding: 10px;
+}
+
+/* Individual Card */
+.feature-card {
+    background-color: #fff;
+    width: 300px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* Icon */
+.feature-card .icon {
+    font-size: 2rem;
+    color: #ff6f61;
+    margin-bottom: 15px;
+}
+
+/* Card Title */
+.feature-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Card Description */
+.feature-card p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .feature-card {
+        width: 45%;
+    }
+}
+
+@media (max-width: 750px) {
+    .feature-card {
+        width: 90%;
+    }
+}
+
+
+
+/* Small Banner */
+.business-banner {
+    background: linear-gradient(90deg, #ff4e50, #1e90ff); /* Red to Blue gradient */
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 15px;
+    margin: 40px auto;
+    max-width: 800px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Banner Heading */
+.business-banner h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* Call Button */
+.call-btn {
+    display: inline-block;
+    background-color: #fff;
+    color: #013e85;
+    font-weight: bold;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.call-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    background-color: #f0f0f0;
+}
+
+/* FAQs Section */
+.faq-section {
+    max-width: 1000px; /* Increased width for spacious content */
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.faq-title {
+    text-align: center;
+    font-size: 2.5rem; /* Larger title */
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: #ffffff;
+}
+
+/* Individual FAQ Card */
+.faq-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.452);
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.faq-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* Question container with icon */
+.faq-question-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 35px; /* Increased padding */
+    cursor: pointer;
+}
+
+.faq-question {
+    font-size: 1.4rem; /* Larger font for question */
+    font-weight: 600;
+    color: #013e85;
+    margin: 0;
+}
+
+/* Arrow Icon */
+.faq-icon {
+    font-size: 1.2rem;
+    color: #013e85;
+    transition: transform 0.3s;
+}
+
+/* Answer */
+.faq-answer {
+    padding: 0 35px 25px 35px; /* Larger padding for spacious content */
+    font-size: 1.1rem; /* Larger font for answer */
+    color: #555;
+    line-height: 1.8; /* Increased line-height for readability */
+    display: none; /* hidden by default */
+}
+
+/* Active state */
+.faq-card.active .faq-answer {
+    display: block;
+}
+
+.faq-card.active .faq-icon {
+    transform: rotate(180deg);
+}
+
+
+
+
+
+
+
+
+/* =====================================================
+   FOOTER MAIN WRAPPER
+===================================================== */
+/* =======================================
+   FOOTER STYLING (4 columns layout)
+======================================= */
+#colophon {
+    background: #0a0a0a;
+    /* CHANGE BACKGROUND COLOR HERE */
+    padding: 50px 0;
+    color: #fff;
+}
+
+/* Columns side-by-side */
+#colophon .e-con-inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* Headings + items aligned */
+#colophon .elementor-widget {
+    width: 100%;
+}
+
+/* Remove Elementor auto-centering */
+#colophon .elementor-widget-container {
+    text-align: left !important;
+}
+
+/* Remove underline from all links */
+#colophon a {
+    text-decoration: none !important;
+    color: #fff;
+    transition: 0.3s;
+}
+
+#colophon a:hover {
+    color: #4ba6f1;
+    /* hover color, change anytime */
+}
+
+/* Contact icon alignment */
+#colophon .elementor-icon-box-wrapper {
+    align-items: flex-start;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    #colophon .e-con-inner {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+
+
+
+/* =====================================================
+   COLUMN HEADINGS
+===================================================== */
+#colophon h6.elementor-heading-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #4ba6f1;
+    margin-bottom: 15px;
+}
+
+#colophon p {
+    text-align: justify;
+    opacity: 0.8;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+/* =====================================================
+   ICON LIST (Quick Links / Broadband / Other)
+===================================================== */
+#colophon .elementor-icon-list-item {
+    margin-bottom: 8px;
+}
+
+#colophon .elementor-icon-list-text {
+    font-size: 15px;
+    color: #ffffff;
+}
+
+#colophon .elementor-icon-list-item:hover .elementor-icon-list-text {
+    color: #4ba6f1;
+}
+
+#colophon .elementor-icon-list-icon svg {
+    width: 10px;
+    height: 10px;
+    fill: #4ba6f1 !important;
+}
+
+/* =====================================================
+   CONTACT BOX (Address / Phone / Email)
+===================================================== */
+#colophon .elementor-icon-box-wrapper {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+#colophon .elementor-icon-box-icon {
+    background: #1b263b;
+    padding: 12px;
+    border-radius: 10px;
+    display: flex;
+}
+
+#colophon .elementor-icon-box-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: #ffffff !important;
+}
+
+#colophon .elementor-icon-box-wrapper:hover .elementor-icon-box-icon {
+    background: #4ba6f1;
+}
+
+#colophon .elementor-icon-box-title span,
+#colophon .elementor-icon-box-title a {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* =====================================================
+   SOCIAL ICONS (Facebook / Instagram / Google)
+===================================================== */
+.elementor-social-icons-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    /* Icons ke beech space */
+}
+
+.elementor-screen-only {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+    white-space: nowrap;
+}
+
+
+.elementor-social-icons-wrapper a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    /* Icon circle width */
+    height: 40px;
+    /* Icon circle height */
+    background: #2b59bb;
+    /* Light background */
+    border-radius: 50%;
+    /* Round shape */
+    transition: 0.3s ease;
+}
+
+.elementor-social-icons-wrapper a svg {
+    width: 20px;
+    height: 20px;
+    fill: #000;
+    /* Icon color */
+}
+
+/* Hover Effects */
+.elementor-social-icons-wrapper a:hover {
+    background: #000;
+}
+
+.elementor-social-icons-wrapper a:hover svg {
+    fill: #fff;
+}
+
+  /* Container (bottom-right floating) */
+    .whatsapp-fab {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 9999;
+      display: inline-block;
+      text-decoration: none;
+      outline: none;
+    }
+
+    /* Circle + shadow */
+    .whatsapp-btn {
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: linear-gradient(180deg, #25D366 0%, #128C7E 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 20px rgba(18, 140, 126, 0.25);
+      transform: translateZ(0);
+      /* make it feel stable, with a very subtle blink/pulse */
+      animation: subtleBlink 3s ease-in-out infinite;
+      will-change: opacity, transform;
+      cursor: pointer;
+    }
+
+    /* Slight hover pop (no heavy movement) */
+    .whatsapp-btn:hover {
+      transform: scale(1.06);
+      box-shadow: 0 12px 30px rgba(18, 140, 126, 0.30);
+    }
+
+    /* The SVG icon itself */
+    .whatsapp-svg {
+      width: 34px;
+      height: 34px;
+      display: block;
+      pointer-events: none; /* svg doesn't steal click */
+      filter: drop-shadow(0 1px 0 rgba(0,0,0,0.05));
+    }
+
+    /* Subtle blink: mostly stable, tiny dip in opacity + micro-scale */
+    @keyframes subtleBlink {
+      0%   { opacity: 1; transform: scale(1); }
+      8%   { opacity: 0.92; transform: scale(0.995); }
+      12%  { opacity: 1; transform: scale(1); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    /* optional accessible label hidden visually but available for screen readers */
+    .sr-only {
+      position: absolute !important;
+      height: 1px; width: 1px;
+      overflow: hidden;
+      clip: rect(1px, 1px, 1px, 1px);
+      white-space: nowrap; /* added line */
+    }
+
+/* =====================================================
+   COPYRIGHT BAR
+===================================================== */
+/* COPYRIGHT BAR FULL CENTER ALIGN */
+.elementor-element-e739306 {
+    top: 12px;
+    background: #1b263b !important;
+    padding: 15px 0;
+}
+
+/* Inner container ko center alignment dena */
+.elementor-element-e739306 .e-con-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Text widget ke text ko center karna */
+.elementor-element-e739306 .elementor-widget-container {
+    text-align: center !important;
+}
+
+/* Paragraph style */
+.elementor-element-e739306 p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.85;
+    color: #fff;
+}
+
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+@media (max-width: 768px) {
+    #colophon {
+        text-align: left;
+    }
+
+    #colophon .elementor-social-icons-wrapper {
+        justify-content: flex-start;
+    }
+
+    #colophon .e-con-inner {
+        gap: 20px;
+    }
+}
+
+
+
+
+/* ------------------------------------------
+   MOBILE RESPONSIVE MENU
+------------------------------------------ */
+.hfe-nav-menu__toggle {
+    display: none;
+}
+
+/* Mobile Design */
+@media (max-width: 768px) {
+
+    /* Layout stacks */
+    .elementor-12>header {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    /* Logo full width */
+    .elementor-widget-image {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    /* Show menu toggle */
+    .hfe-nav-menu__toggle {
+        display: block !important;
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+
+    .hfe-nav-menu__toggle svg {
+        width: 32px;
+        height: 32px;
+        fill: #000;
+    }
+
+    /* Hide desktop nav */
+    .hfe-nav-menu__layout-horizontal {
+        display: none !important;
+    }
+
+    /* When Elementor adds "active" class, show mobile menu */
+    .hfe-nav-menu__layout-horizontal.active {
+        display: block !important;
+        width: 100%;
+        background: #fff;
+        padding: 20px 0;
+        border-top: 1px solid #ddd;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .hfe-nav-menu__layout-horizontal ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hfe-nav-menu__layout-horizontal ul li a {
+        font-size: 18px;
+    }
+
+    /* Call button full width */
+    #phone {
+        width: 100%;
+        justify-content: center;
+        padding: 12px;
+        margin-top: 10px;
+        font-size: 18px;
+    }
+}
+
+
+
+/* privacy & policy css */
+:root{
+--bg:#0f1724; --card:#081226; --muted:#9aa7ba; --accent:#1b63ff; --glass:rgba(255,255,255,0.03);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,#071027 0%, #071b2b 100%);color:#e6eef8;-webkit-font-smoothing:antialiased}
+
+
+.container{max-width:1100px;margin:36px auto;padding:28px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 10px 40px rgba(2,6,23,0.6);backdrop-filter:blur(8px)}
+
+
+.header{display:flex;gap:18px;align-items:center}
+.brand{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#0046d7);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:20px}
+h1{font-size:1.6rem;margin:0}
+.subtitle{color:var(--muted);margin-top:6px}
+
+
+.grid{display:grid;grid-template-columns:1fr 320px;gap:22px;margin-top:20px}
+
+
+.card{padding:22px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.02)}
+.card h2{margin-top:0}
+p{color:#cfe3ff}
+ul{padding-left:1.2rem}
+li{margin:8px 0}
+
+
+.meta{color:var(--muted);font-size:0.95rem}
+
+
+.side{position:sticky;top:32px}
+.toc{list-style:none;padding:0;margin:0}
+.toc li{margin:10px 0}
+.toc a{color:var(--muted);text-decoration:none;font-weight:600}
+
+
+.accordion{border-radius:10px;overflow:hidden}
+.acc-item{border-top:1px solid rgba(255,255,255,0.02)}
+.acc-summary{display:flex;justify-content:space-between;align-items:center;padding:14px;cursor:pointer}
+.acc-content{padding:0 14px 18px 14px;display:none;color:#cfe3ff}
+
+
+.cta{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#0a4ed6);color:#fff;font-weight:600;text-decoration:none}
+.muted{color:var(--muted)}
+
+
+footer{margin-top:18px;color:var(--muted);font-size:0.9rem;text-align:center}
+
+
+@media (max-width:980px){.grid{grid-template-columns:1fr;}.side{position:static}}
