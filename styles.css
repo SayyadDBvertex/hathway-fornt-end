@@ -57,7 +57,7 @@ a:hover {
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     padding: 14px 0;
     position: sticky;
-    top: 0;
+    top: 2px;
     z-index: 9000;
     transition: all 0.3s ease;
 }
@@ -135,10 +135,12 @@ a:hover {
 }
 
 
+
 /* ====================================================
    CALL BUTTON (New Round + Glow)
 ==================================================== */
 #phone {
+    /* existing styles */
     background: linear-gradient(135deg, #4e95ff, #26c7a8);
     color: #000;
     padding: 10px 15px;
@@ -151,11 +153,12 @@ a:hover {
     align-items: center;
     gap: 10px;
 
-    box-shadow: 0 0 12px rgba(78, 255, 197, 0.4);
+    box-shadow: 0 0 12px rgb(16, 252, 67);
     transition: 0.3s ease;
+
+    animation: callBlink 2s infinite ease-in-out;  /* slower blink */
 }
 
-/* Hover */
 #phone:hover {
     background: linear-gradient(135deg, #2a86ff, #1467b5);
     transform: translateY(-2px);
@@ -172,6 +175,14 @@ a:hover {
 
 #phone:hover svg {
     transform: rotate(12deg) scale(1.15);
+}
+@keyframes callBlink {
+    0%   { transform: scale(1); opacity: 1; }
+    10%  { transform: scale(1.15); opacity: 1; }   /* first pulse */
+    20%  { transform: scale(1); opacity: 0.85; }   /* fade */
+    30%  { transform: scale(1.12); opacity: 1; }   /* second pulse */
+    40%  { transform: scale(1); opacity: 0.9; }    /* fade */
+    100% { transform: scale(1); opacity: 1; }
 }
 
 /* ====================================================
@@ -218,13 +229,16 @@ a:hover {
 
 
 .elementor-element-999a746 img {
-    width: 100%;
-    height: 100vh;   /* make image full viewport height (optional) */
-    object-fit: cover;
-    object-position: center;
-    display: block;  /* remove small inline gaps below image */
-    filter: brightness(95%) contrast(105%);
+    width: 100%; 
+    top: auto;                /* Full width of container */
+    height: auto;                /* Let height scale proportionally */
+    max-height: 100vh;           /* Never taller than viewport */
+    object-fit: cover;           /* Cover container while maintaining aspect ratio */
+    object-position: center;     /* Center the image */
+    display: block;              /* Remove inline gaps below image */
+    filter: brightness(95%) contrast(105%); /* Optional filter */
 }
+
 
 
 /* Dark Overlay */
@@ -233,6 +247,36 @@ a:hover {
     position: absolute;
     background: rgb(255, 254, 254);
     z-index: 1;
+}
+
+@media (max-width: 1024px) {
+    .elementor-element-999a746 img {
+        max-height: 70vh;        /* Reduce height for smaller screens */
+        object-position: center; /* Keep focus centered */
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    .elementor-element-999a746 img {
+        max-height: 50vh;        /* Smaller height on mobile */
+        object-position: top;    /* Focus on top part (optional) */
+    }
+}
+
+/* Extra small mobile screens */
+@media (max-width: 480px) {
+    .elementor-element-999a746 img {
+        max-height: 40vh;        /* Even smaller for very small phones */
+        object-position: top;    /* Keep important part visible */
+    }
+}
+@media (max-width: 375px) {
+    .elementor-element-999a746 img {
+        max-height: 100vh;        /* Even smaller for very small phones */
+        object-position: top;    /* Keep important part visible */
+        padding: 0px;
+    }
 }
 
 /* =====================================
@@ -309,13 +353,40 @@ button {
 button:hover {
   background: #1f64ee;
 }
+/* Success message styling */
+.success-message {
+    display: inline-block;           /* Works with padding/margin */
+    width: 100%;                     /* Full width container */
+    padding: 18px 20px;              /* Top/Bottom 18px, Left/Right 20px */
+    background: linear-gradient(135deg, #4caf50, #66bb6a); /* Nice green gradient */
+    color: #fff;                     /* Text color */
+    font-size: 16px;                 /* Text size */
+    font-weight: bold;               /* Bold text */
+    border-radius: 8px;              /* Rounded corners */
+    border: none;                    /* Remove border */
+    cursor: default;                 /* Pointer cursor can be removed */
+    text-align: center;              /* Center text */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* Subtle shadow */
+    transition: all 0.3s ease;       /* Smooth hover/animation effect */
+    margin-top: 15px;                /* Space above the message */
+}
+
+/* Optional hover effect */
+.success-message:hover {
+    transform: translateY(-2px);     /* Slight lift effect */
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25); /* Stronger shadow */
+}
+
+
 
 /* ---------- RESPONSIVE ---------- */
-@media (max-width: 600px) {
+
+@media (max-width: 768px) {
   .form-wrapper {
     max-width: 90%;
     padding: 20px;
-    top: 50%;
+    top: 65%;
+    left: 50%;
   }
 
   .form-wrapper h2 {
@@ -323,9 +394,12 @@ button:hover {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 375px) {
   .form-wrapper {
-    padding: 18px;
+    max-width: 90%;
+    padding: 20px;
+    top: 63%;
+    left: 50%;
   }
 
   input, textarea {
@@ -982,14 +1056,21 @@ button:hover {
 
 /* Contact Info Styling */
 .contact-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
+    display: inline-block;
+    align-items: flex-start;   /* icon top align */
+    gap: 10px;
     margin-bottom: 15px;
     color: #ccc;
-    font-size: 15px;
-    line-height: 1.5;
+    font-size: 17px;
+    line-height: 1.4;
 }
+
+.contact-text {
+    display: flex;
+    flex-direction: column;    /* text ek ke niche ek */
+}
+
+
 
 .contact-item strong {
     color: #fff;
@@ -1099,8 +1180,8 @@ button:hover {
   /* Container (bottom-right floating) */
     .whatsapp-fab {
       position: fixed;
-      right: 20px;
-      bottom: 20px;
+      right: 100px;
+      bottom: 50px;
       z-index: 9999;
       display: inline-block;
       text-decoration: none;
@@ -1140,12 +1221,82 @@ button:hover {
     }
 
     /* Subtle blink: mostly stable, tiny dip in opacity + micro-scale */
-    @keyframes subtleBlink {
-      0%   { opacity: 1; transform: scale(1); }
-      8%   { opacity: 0.92; transform: scale(0.995); }
-      12%  { opacity: 1; transform: scale(1); }
-      100% { opacity: 1; transform: scale(1); }
+   @keyframes subtleBlink {
+    0%   { opacity: 1; transform: scale(1); }
+    20%  { opacity: 1.6; transform: scale(0.95); }   /* darker + faster */
+    40%  { opacity: 1; transform: scale(1.06); }     /* sharp zoom */
+    60%  { opacity: 0.7; transform: scale(0.97); }   /* dark fade */
+    100% { opacity: 1; transform: scale(1); }
+}
+/* Tablets / small laptops */
+@media (max-width: 1024px) {
+    .whatsapp-fab {
+        right: 40px;
+        bottom: 25px;
     }
+
+    .whatsapp-btn {
+        width: 56px;
+        height: 56px;
+    }
+
+    .whatsapp-svg {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 768px) {
+    .whatsapp-fab {
+        right: 30px;
+        bottom: 20px;
+    }
+
+    .whatsapp-btn {
+        width: 50px;
+        height: 50px;
+    }
+
+    .whatsapp-svg {
+        width: 26px;
+        height: 26px;
+    }
+}
+
+/* Extra small phones (e.g., 320px) */
+@media (max-width: 480px) {
+    .whatsapp-fab {
+        right: 20px;
+        bottom: 20px;
+    }
+
+    .whatsapp-btn {
+        width: 44px;
+        height: 44px;
+    }
+
+    .whatsapp-svg {
+        width: 22px;
+        height: 22px;
+    }
+}
+@media (max-width: 375px) {
+    .whatsapp-fab {
+        right: 20px;
+        bottom: 20px;
+    }
+
+    .whatsapp-btn {
+        width: 50px;
+        height: 50px;
+    }
+
+    .whatsapp-svg {
+        width: 30px;
+        height: 30px;
+    }
+}
 
     /* optional accessible label hidden visually but available for screen readers */
     .sr-only {
@@ -1155,10 +1306,6 @@ button:hover {
       clip: rect(1px, 1px, 1px, 1px);
       white-space: nowrap; /* added line */
     }
-
-
-
-
 
 /* ------------------------------------------
    MOBILE RESPONSIVE MENU
