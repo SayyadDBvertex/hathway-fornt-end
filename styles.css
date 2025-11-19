@@ -210,15 +210,21 @@ a:hover {
 .elementor-element-999a746 {
     position: absolute;
     inset: 0;
+    margin: 0;       /* remove any top/bottom margin */
+    padding: 0;  
 }
+
+
 
 .elementor-element-999a746 img {
     width: 100%;
-    height: 100%;
+    height: 100vh;   /* make image full viewport height (optional) */
     object-fit: cover;
     object-position: center;
-    filter: brightness(85%) contrast(105%);
+    display: block;  /* remove small inline gaps below image */
+    filter: brightness(95%) contrast(105%);
 }
+
 
 /* Dark Overlay */
 .elementor-element-2b51bea::before {
@@ -238,16 +244,16 @@ a:hover {
   max-width: 420px;
   margin: 0 auto;
 
-  background: #ffffff;
+  background: #47464660;
   padding: 25px;
   border-radius: 15px;
 
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.048);
   font-family: Arial, sans-serif;
 
   position: absolute;
-  top: 45%;
-  left: 65%;
+  top: 50%;
+  left: 25%;
   transform: translate(-50%, -50%);
 
   z-index: 999; /* Form stays above the banner */
@@ -257,7 +263,7 @@ a:hover {
 .form-wrapper h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: #1b63ff;
+  color: #ffffff;
   font-size: 22px;
 }
 
@@ -266,7 +272,7 @@ label {
   font-weight: bold;
   display: block;
   margin-bottom: 6px;
-  color: #333;
+  color: #ffffff;
 }
 
 /* ---------- INPUTS ---------- */
@@ -605,11 +611,42 @@ button:hover {
     flex-wrap: wrap;
     justify-content: center;
     position: relative;
-    bottom: 120px;
-    background-color: #001d9c;
+    /* bottom: 0px; */
+    background-color: rgb(0, 29, 156);
     color: white;
-    padding: 10px;
+    padding: 8px;
+    width: 92%;
+    max-width: 1750px;
+    margin: 5px auto;
+    border-radius: 8px;
 }
+/* Medium screens (tablets) */
+@media (max-width: 1024px) {
+    .card-containers {
+        width: 85%;      /* slightly narrower */
+        padding: 8px;
+    }
+}
+
+/* Small screens (mobiles) */
+@media (max-width: 768px) {
+    .card-containers {
+        width: 95%;      /* almost full width, but small margins */
+        padding: 6px;
+        bottom: 60px;    /* adjust bottom spacing for smaller screens */
+    }
+}
+
+/* Extra small screens (phones) */
+@media (max-width: 480px) {
+    .card-containers {
+        width: 98%;      /* nearly full width */
+        padding: 5px;
+        bottom: 40px;
+    }
+}
+
+
 
 /* Individual Card */
 .feature-card {
@@ -782,184 +819,293 @@ button:hover {
 /* =====================================================
    FOOTER MAIN WRAPPER
 ===================================================== */
-/* =======================================
-   FOOTER STYLING (4 columns layout)
-======================================= */
-#colophon {
-    background: #0a0a0a;
-    /* CHANGE BACKGROUND COLOR HERE */
-    padding: 50px 0;
-    color: #fff;
+/* Footer Section */
+.footer-section {
+    background: linear-gradient(180deg, #001d9c 0%, rgba(15, 26, 67, 0.08) 100%);
+    color: white;
+    padding: 30px 20px; /* Reduced padding for smaller footer */
+    font-family: Arial, sans-serif;
 }
 
-/* Columns side-by-side */
-#colophon .e-con-inner {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+/* Footer Top: Logo + Vision */
+.footer-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.footer-logo img {
+    max-width: 120px; /* Smaller logo */
+    height: auto;
+    border-radius: 6px;
+}
+
+.footer-vision {
+    flex: 1;
+}
+
+.footer-vision p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: white;
+    background-color: #3b5998;
+    border-radius: 50%;
+    font-size: 16px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.social-links a:hover {
+    background-color: #ffcc00;
+    transform: scale(1.2);
+}
+
+/* Footer Styling - Optimized Layout */
+.footer {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    padding: 60px 20px 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Container for proper alignment */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
     gap: 40px;
+}
+
+/* Top Section - Logo, Quick Links, Broadband, Contact Us */
+.footer-top {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+/* Logo and Brand */
+.footer-brand {
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
     align-items: flex-start;
+    gap: 25px;
 }
 
-/* Headings + items aligned */
-#colophon .elementor-widget {
-    width: 100%;
+.footer-logo img {
+    max-width: 280px;
+    height: auto;
+    filter: brightness(0) invert(1);
+    transition: transform 0.4s ease;
 }
 
-/* Remove Elementor auto-centering */
-#colophon .elementor-widget-container {
-    text-align: left !important;
+.footer-logo img:hover {
+    transform: scale(1.05);
 }
 
-/* Remove underline from all links */
-#colophon a {
-    text-decoration: none !important;
+.footer-text {
+    font-size: 22px;
+    color: #ddd;
+    line-height: 1.6;
+    text-align: left;
+    max-width: 500px;
+    margin: 0;
+}
+
+/* Footer Links Section - Three columns layout */
+.footer-links {
+    display: flex;
+    gap: 40px;
+    flex: 2 1 500px;
+    justify-content: flex-start;
+}
+
+.footer-column {
+    flex: 1;
+    text-align: left;
+}
+
+.footer-column h4 {
+    font-size: 20px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
     color: #fff;
-    transition: 0.3s;
+    position: relative;
+    padding-bottom: 12px;
 }
 
-#colophon a:hover {
-    color: #4ba6f1;
-    /* hover color, change anytime */
+.footer-column h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 45px;
+    height: 3px;
+    background: #3479fa;
+    border-radius: 2px;
 }
 
-/* Contact icon alignment */
-#colophon .elementor-icon-box-wrapper {
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 14px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #ccc;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    padding: 2px 0;
+}
+
+.footer-column ul li a:hover {
+    color: #3479fa;
+    transform: translateX(8px);
+}
+
+/* Contact Info Styling */
+.contact-item {
+    display: flex;
     align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 15px;
+    color: #ccc;
+    font-size: 15px;
+    line-height: 1.5;
 }
 
-/* Mobile responsive */
-@media (max-width: 768px) {
-    #colophon .e-con-inner {
-        grid-template-columns: 1fr;
-        gap: 25px;
+.contact-item strong {
+    color: #fff;
+    min-width: 60px;
+}
+
+.contact-item a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #3479fa;
+}
+
+/* Social Media Links */
+.footer-social {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    background: #3479fa;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 111, 97, 0.3);
+}
+
+/* Footer Bottom - Centered */
+.footer-bottom {
+    text-align: center;
+    padding-top: 40px;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 15px;
+    color: #aaa;
+}
+
+.footer-bottom p {
+    margin: 8px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .footer-top {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 30px;
     }
 }
 
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 15px 20px;
+    }
+    
+    .footer-top {
+        flex-direction: column;
+        gap: 30px;
+    }
 
-
-/* =====================================================
-   COLUMN HEADINGS
-===================================================== */
-#colophon h6.elementor-heading-title {
-    font-size: 18px;
-    font-weight: 600;
-    color: #4ba6f1;
-    margin-bottom: 15px;
+    .footer-logo img {
+        max-width: 220px;
+    }
 }
 
-#colophon p {
-    text-align: justify;
-    opacity: 0.8;
-    line-height: 1.6;
-    font-size: 15px;
-}
+@media (max-width: 480px) {
+    .footer {
+        padding: 30px 12px 15px;
+    }
+    
+    .footer-social {
+        justify-content: center;
+    }
+    
+    .footer-social a {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
 
-/* =====================================================
-   ICON LIST (Quick Links / Broadband / Other)
-===================================================== */
-#colophon .elementor-icon-list-item {
-    margin-bottom: 8px;
-}
-
-#colophon .elementor-icon-list-text {
-    font-size: 15px;
-    color: #ffffff;
-}
-
-#colophon .elementor-icon-list-item:hover .elementor-icon-list-text {
-    color: #4ba6f1;
-}
-
-#colophon .elementor-icon-list-icon svg {
-    width: 10px;
-    height: 10px;
-    fill: #4ba6f1 !important;
-}
-
-/* =====================================================
-   CONTACT BOX (Address / Phone / Email)
-===================================================== */
-#colophon .elementor-icon-box-wrapper {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 18px;
-}
-
-#colophon .elementor-icon-box-icon {
-    background: #1b263b;
-    padding: 12px;
-    border-radius: 10px;
-    display: flex;
-}
-
-#colophon .elementor-icon-box-icon svg {
-    width: 20px;
-    height: 20px;
-    fill: #ffffff !important;
-}
-
-#colophon .elementor-icon-box-wrapper:hover .elementor-icon-box-icon {
-    background: #4ba6f1;
-}
-
-#colophon .elementor-icon-box-title span,
-#colophon .elementor-icon-box-title a {
-    font-size: 16px;
-    font-weight: 600;
-}
-
-/* =====================================================
-   SOCIAL ICONS (Facebook / Instagram / Google)
-===================================================== */
-.elementor-social-icons-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    /* Icons ke beech space */
-}
-
-.elementor-screen-only {
-    position: absolute !important;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
-    white-space: nowrap;
-}
-
-
-.elementor-social-icons-wrapper a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    /* Icon circle width */
-    height: 40px;
-    /* Icon circle height */
-    background: #2b59bb;
-    /* Light background */
-    border-radius: 50%;
-    /* Round shape */
-    transition: 0.3s ease;
-}
-
-.elementor-social-icons-wrapper a svg {
-    width: 20px;
-    height: 20px;
-    fill: #000;
-    /* Icon color */
-}
-
-/* Hover Effects */
-.elementor-social-icons-wrapper a:hover {
-    background: #000;
-}
-
-.elementor-social-icons-wrapper a:hover svg {
-    fill: #fff;
+    .footer-text {
+        font-size: 16px;
+    }
 }
 
   /* Container (bottom-right floating) */
@@ -1022,54 +1168,6 @@ button:hover {
       white-space: nowrap; /* added line */
     }
 
-/* =====================================================
-   COPYRIGHT BAR
-===================================================== */
-/* COPYRIGHT BAR FULL CENTER ALIGN */
-.elementor-element-e739306 {
-    top: 12px;
-    background: #1b263b !important;
-    padding: 15px 0;
-}
-
-/* Inner container ko center alignment dena */
-.elementor-element-e739306 .e-con-inner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Text widget ke text ko center karna */
-.elementor-element-e739306 .elementor-widget-container {
-    text-align: center !important;
-}
-
-/* Paragraph style */
-.elementor-element-e739306 p {
-    margin: 0;
-    font-size: 14px;
-    opacity: 0.85;
-    color: #fff;
-}
-
-
-
-/* =====================================================
-   RESPONSIVE
-===================================================== */
-@media (max-width: 768px) {
-    #colophon {
-        text-align: left;
-    }
-
-    #colophon .elementor-social-icons-wrapper {
-        justify-content: flex-start;
-    }
-
-    #colophon .e-con-inner {
-        gap: 20px;
-    }
-}
 
 
 
