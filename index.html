@@ -950,9 +950,10 @@
         mobile: document.getElementById("mobile").value,
         address: document.getElementById("address").value
     };
-
+// http://localhost:3001/api/
+//"https://api.hathway.graphicsvolume.com/api"
     try {
-        const req = await fetch("http://localhost:3001/api/", {
+        const req = await fetch("https://api.hathway.graphicsvolume.com/api", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
