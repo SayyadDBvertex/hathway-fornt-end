@@ -57,7 +57,7 @@ a:hover {
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     padding: 14px 0;
     position: sticky;
-    top: 2px;
+    top: 0px;
     z-index: 9000;
     transition: all 0.3s ease;
 }
@@ -93,46 +93,92 @@ a:hover {
 /* ====================================================
    MENU (New Neon Accent)
 ==================================================== */
-.hfe-nav-menu__layout-horizontal ul {
+.nav-wrapper {
+    padding: 10px 0;
+}
+
+/* Navbar */
+.custom-mobile-nav {
     display: flex;
-    gap: 40px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Hide toggle button on desktop */
+.mobile-menu-toggle {
+    display: none;
+}
+.mobile-menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    background: white;
+    transition: 0.3s;
+}
+
+/* Navigation Menu */
+.hfe-nav-menu {
     list-style: none;
+    display: flex;
+    gap: 25px; /* Space between menu items */
+    margin: 0;
+    padding: 0;
 }
 
-.hfe-nav-menu__layout-horizontal ul li a {
+/* Menu Items */
+.hfe-nav-menu li a {
+    color: white;
     text-decoration: none;
-    color: #e2e2e2;
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-    position: relative;
-    padding-bottom: 4px;
-    transition: 0.25s ease;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
-/* Underline Glow */
-.hfe-nav-menu__layout-horizontal ul li a::after {
-    content: "";
-    width: 0%;
-    height: 2px;
-    background: #4ea1ff;
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    border-radius: 6px;
-    box-shadow: 0 0 6px #3479fa;
-    transition: width 0.3s ease;
+/* Hover Color – Gradient Text */
+.hfe-nav-menu li a:hover {
+    background: linear-gradient(135deg, #4e95ff, #26c7a8);
+    background-clip: text;          /* Standard property */
+    -webkit-background-clip: text;  /* For Chrome, Safari */
+    -webkit-text-fill-color: transparent; /* Required for WebKit */
+    color: transparent;             /* Fallback for other browsers */
 }
 
-.hfe-nav-menu__layout-horizontal ul li a:hover,
-.hfe-nav-menu .current-menu-item a {
-    color: #4ea9ff;
+
+/* Active Menu Item – Gradient Text */
+.current-menu-item a {
+    background: linear-gradient(135deg, #4e95ff, #26c7a8); /* blue + green */
+    background-clip: text; 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
 }
 
-.hfe-nav-menu__layout-horizontal ul li a:hover::after,
-.hfe-nav-menu .current-menu-item a::after {
-    width: 100%;
+
+/* Mobile Responsive */
+
+@media (max-width: 768px) {
+    .custom-mobile-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hfe-nav-menu {
+        width: 100%;
+        display: none; /* hidden by default */
+        flex-direction: column;
+        background: #000; 
+        padding: 15px;
+        margin-top: 10px;
+    }
+
+    .hfe-nav-menu.show {
+        display: flex !important; /* show on toggle */
+    }
 }
+
+
+
 
 
 
@@ -203,6 +249,8 @@ a:hover {
 
     #phone {
         padding: 10px 20px;
+        position: relative;
+        right: 20px;
     }
 }
 
@@ -252,7 +300,8 @@ a:hover {
 @media (max-width: 1024px) {
     .elementor-element-999a746 img {
         max-height: 70vh;        /* Reduce height for smaller screens */
-        object-position: center; /* Keep focus centered */
+        position: relative;
+        bottom: 2px;
     }
 }
 
@@ -260,7 +309,9 @@ a:hover {
 @media (max-width: 768px) {
     .elementor-element-999a746 img {
         max-height: 50vh;        /* Smaller height on mobile */
-        object-position: top;    /* Focus on top part (optional) */
+        position: relative;
+        bottom: 2px;
+
     }
 }
 
@@ -268,14 +319,15 @@ a:hover {
 @media (max-width: 480px) {
     .elementor-element-999a746 img {
         max-height: 40vh;        /* Even smaller for very small phones */
-        object-position: top;    /* Keep important part visible */
+        position: relative;
+        bottom: 1px;
     }
 }
 @media (max-width: 375px) {
     .elementor-element-999a746 img {
-        max-height: 100vh;        /* Even smaller for very small phones */
-        object-position: top;    /* Keep important part visible */
-        padding: 0px;
+        max-height: 100vh;        /* Even smaller for very small phones */  
+        position: relative;
+        bottom: 1px;
     }
 }
 
@@ -413,47 +465,69 @@ button:hover {
   }
 }
 
-/* Card Container: No change, maintains layout */
+/* Root Variables for Dark/Light Theme */
+:root {
+    --bg-light: #f7f9fc;
+    --bg-dark: rgba(20, 25, 35, 0.85);
+    --card-bg-light: #ffffff;
+    --card-bg-dark: rgba(40, 45, 55, 0.85);
+    --text-light: #333;
+    --text-dark: #e0e0e0;
+    --price-bg-light: #e0f0ff;
+    --price-bg-dark: rgba(50, 120, 200, 0.2);
+    --amount-gradient: linear-gradient(135deg, #1e3c72, #2a5298);
+    --amount-gradient-dark: linear-gradient(135deg, #5dadee, #2a3d72);
+}
+
+/* Body Theme Example */
+body.light-theme {
+    background-color: var(--bg-light);
+    color: var(--text-light);
+}
+
+body.dark-theme {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+}
+
+/* Card Container */
 .card-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* Reduced gap */
     gap: 20px;
-   
 }
 
-/* Card width: Reduced from 27.33% to 25% for a tighter 3-per-row look with 20px gap */
+/* Card Styles */
 .premium-card {
-    /* Slightly smaller card width */
-    flex: 0 0 30%; 
+    flex: 0 0 30%;
     box-sizing: border-box;
-    /* Reduced margin-bottom */
-    margin-bottom: 20px; 
-    transition: transform 0.3s, box-shadow 0.3s;
-    /* Slightly smaller border radius */
-    border-radius: 15px; 
+    margin-bottom: 20px;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    border-radius: 15px;
     overflow: hidden;
-    /* New: Light Blue/Grey Background */
-    background-color: #f7f9fc; 
+    background-color: var(--card-bg-light);
+}
+
+body.dark-theme .premium-card {
+    background-color: var(--card-bg-dark);
 }
 
 .premium-card:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 
-/* Card Header: New Gradient (Cool Blues/Purples) */
+/* Card Header */
 .card-header {
     text-align: center;
-    padding: 15px; /* Reduced padding */
-    /* New: Blue/Purple Gradient */
+    padding: 15px;
     background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     color: white;
 }
 
 .title-plan {
-    font-size: 1.3rem; /* Reduced font size */
+    font-size: 1.3rem;
     font-weight: 700;
 }
 
@@ -465,66 +539,94 @@ button:hover {
 
 /* Card Body */
 .card-body {
-    padding: 15px; /* Reduced padding */
-    /* New: Very light background */
-    background-color: #ffffff;
+    padding: 15px;
+    background-color: var(--card-bg-light);
+}
+
+body.dark-theme .card-body {
+    background-color: transparent;
+}
+
+/* Price & Amount Container */
+.price-amount-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
 }
 
 /* Price */
 .price {
-    font-weight: 600;
-    margin-bottom: 8px;
-    display: inline-block;
-    padding: 3px 8px; /* Reduced padding */
-    border-radius: 12px;
-    /* New: Light Blue Accent */
-    background-color: #b3ccff;
-    color: #1e3c72;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background-color: var(--price-bg-light);
+    color: #0d3b66;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
+body.dark-theme .price {
+    background-color: var(--price-bg-dark);
+    color: #cce0ff;
+}
+
+.price:hover {
+    transform: translateY(-2px);
+    background-color: #c2e0ff;
+    color: #0a2a4f;
+}
+
+/* Amount */
 .amount {
-    font-size: 1.8rem; /* Reduced font size */
-    font-weight: bold;
-    margin-bottom: 10px; /* Reduced margin */
-    display: inline-block;
-    padding: 4px 12px; /* Reduced padding */
-    border-radius: 15px;
-    /* New: Stronger Blue/Purple Gradient */
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    color: white;
+    font-size: 2rem;
+    font-weight: 800;
+    padding: 6px 16px;
+    border-radius: 25px;
+    background: var(--amount-gradient);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+body.dark-theme .amount {
+    background: var(--amount-gradient-dark);
+}
+
+.amount:hover {
+    transform: translateY(-2px) scale(1.03);
 }
 
 /* Features */
 .features {
     list-style: none;
     padding: 0;
-    margin: 0 0 15px 0; /* Reduced margin */
+    margin: 0 0 15px 0;
 }
 
 .features li {
     display: flex;
     align-items: center;
-    padding: 8px; /* Reduced padding */
-    margin-bottom: 8px; /* Reduced margin */
+    padding: 8px;
+    margin-bottom: 8px;
     border-radius: 10px;
     font-weight: 500;
-    color: #333;
 }
 
-/* Unique background for each feature - New softer, cooler pastels */
-.features li:nth-child(1) { background-color: #e6e6ff; } /* Light Lavender */
-.features li:nth-child(2) { background-color: #d8f0ff; } /* Pale Cyan */
-.features li:nth-child(3) { background-color: #ffe0f0; } /* Pale Pink */
-.features li:nth-child(4) { background-color: #e0fff0; } /* Pale Mint */
-.features li:nth-child(5) { background-color: #ffffcc; } /* Pale Yellow */
+.features li:nth-child(1) { background-color: #e6e6ff; }
+.features li:nth-child(2) { background-color: #d8f0ff; }
+.features li:nth-child(3) { background-color: #ffe0f0; }
+.features li:nth-child(4) { background-color: #e0fff0; }
+.features li:nth-child(5) { background-color: #ffffcc; }
 
 .features li .icon {
-    margin-right: 8px; /* Reduced margin */
+    margin-right: 8px;
 }
 
-/* Button: New Gradient (Dark Blues) */
+/* Button */
 .btn-get {
-    padding: 10px 20px; /* Reduced padding */
+    padding: 10px 20px;
     border: none;
     border-radius: 40px;
     font-weight: bold;
@@ -532,7 +634,6 @@ button:hover {
     display: inline-flex;
     align-items: center;
     gap: 5px;
-    /* New: Darker Blue Gradient */
     background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     color: white;
     transition: transform 0.3s, box-shadow 0.3s;
@@ -543,11 +644,10 @@ button:hover {
     background: linear-gradient(0deg, #5dafd3, #0b1316, #59a2c2);
 }
 
-/* Responsive: Adjusted for the new, smaller base width */
+/* Responsive */
 @media (max-width: 1024px) {
     .premium-card {
-        /* Adjusted to fit 2 per row better */
-        flex: 0 0 45%; 
+        flex: 0 0 45%;
     }
 }
 
@@ -556,6 +656,7 @@ button:hover {
         flex: 0 0 100%;
     }
 }
+
 /* bannerimage section */
 
 

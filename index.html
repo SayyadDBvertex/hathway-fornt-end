@@ -32,20 +32,18 @@
             });
         });
         function desktopFallback(event) {
-    // Detect if the user is on desktop
-    if (!/Mobi|Android/i.test(navigator.userAgent)) {
-        event.preventDefault();
-        alert("Please call 810-995-8000 from your phone, or use a VoIP app like Skype.");
-    }
-}
+            // Detect if the user is on desktop
+            if (!/Mobi|Android/i.test(navigator.userAgent)) {
+                event.preventDefault();
+                alert("Please call 810-995-8000 from your phone, or use a VoIP app like Skype.");
+            }
+        }
+        document.querySelector(".mobile-menu-toggle").addEventListener("click", function () {
+            document.querySelector(".hfe-nav-menu").classList.toggle("show");
+        });
+
+
     </script>
-
-
-
-
-
-
-
 
 </head>
 
@@ -69,54 +67,38 @@
                                     sizes="(max-width: 325px) 100vw, 325px"> </a>
                         </div>
                     </div>
-                    <div class="elementor-element elementor-element-75cc8ac e-con-full elementor-hidden-mobile e-flex e-con e-child"
-                        data-id="75cc8ac" data-element_type="container">
-                        <div class="elementor-element elementor-element-bf74016 hfe-nav-menu__align-center hfe-nav-menu__breakpoint-mobile hfe-submenu-icon-arrow hfe-submenu-animation-none hfe-link-redirect-child elementor-widget elementor-widget-navigation-menu"
-                            data-id="bf74016" data-element_type="widget"
-                            data-settings="{&quot;padding_horizontal_menu_item&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:20,&quot;sizes&quot;:[]},&quot;padding_horizontal_menu_item_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:5,&quot;sizes&quot;:[]},&quot;menu_space_between_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:25,&quot;sizes&quot;:[]},&quot;padding_horizontal_menu_item_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_vertical_menu_item&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:15,&quot;sizes&quot;:[]},&quot;padding_vertical_menu_item_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_vertical_menu_item_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;menu_space_between&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;menu_space_between_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;menu_row_space&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;menu_row_space_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;menu_row_space_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;dropdown_border_radius&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;dropdown_border_radius_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;dropdown_border_radius_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;top&quot;:&quot;&quot;,&quot;right&quot;:&quot;&quot;,&quot;bottom&quot;:&quot;&quot;,&quot;left&quot;:&quot;&quot;,&quot;isLinked&quot;:true},&quot;width_dropdown_item&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;220&quot;,&quot;sizes&quot;:[]},&quot;width_dropdown_item_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;width_dropdown_item_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_horizontal_dropdown_item&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_horizontal_dropdown_item_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_horizontal_dropdown_item_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_vertical_dropdown_item&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:15,&quot;sizes&quot;:[]},&quot;padding_vertical_dropdown_item_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;padding_vertical_dropdown_item_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;distance_from_menu&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;distance_from_menu_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;distance_from_menu_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_size&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_size_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_size_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_border_width&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_border_width_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_border_width_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_border_radius&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_border_radius_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;toggle_border_radius_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}"
-                            data-widget_type="navigation-menu.default">
-                            <div class="elementor-widget-container">
-                                <div class="hfe-nav-menu hfe-layout-horizontal hfe-nav-menu-layout horizontal hfe-pointer__none"
-                                    data-layout="horizontal">
-                                    <div role="button" class="hfe-nav-menu__toggle elementor-clickable" tabindex="0"
-                                        aria-label="Menu Toggle" aria-haspopup="true" aria-expanded="false">
-                                        <span class="screen-reader-text">Menu</span>
-                                        <div class="hfe-nav-menu-icon">
-                                            <svg aria-hidden="true" class="e-font-icon-svg e-fas-align-justify"
-                                                viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M432 416H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-128H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-128H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-128H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z">
-                                                </path>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <nav class="hfe-nav-menu__layout-horizontal hfe-nav-menu__submenu-arrow"
-                                        data-toggle-icon="&lt;svg aria-hidden=&quot;true&quot; tabindex=&quot;0&quot; class=&quot;e-font-icon-svg e-fas-align-justify&quot; viewBox=&quot;0 0 448 512&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;path d=&quot;M432 416H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-128H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-128H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-128H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;"
-                                        data-close-icon="&lt;svg aria-hidden=&quot;true&quot; tabindex=&quot;0&quot; class=&quot;e-font-icon-svg e-far-window-close&quot; viewBox=&quot;0 0 512 512&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;path d=&quot;M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm0 394c0 3.3-2.7 6-6 6H54c-3.3 0-6-2.7-6-6V86c0-3.3 2.7-6 6-6h404c3.3 0 6 2.7 6 6v340zM356.5 194.6L295.1 256l61.4 61.4c4.6 4.6 4.6 12.1 0 16.8l-22.3 22.3c-4.6 4.6-12.1 4.6-16.8 0L256 295.1l-61.4 61.4c-4.6 4.6-12.1 4.6-16.8 0l-22.3-22.3c-4.6-4.6-4.6-12.1 0-16.8l61.4-61.4-61.4-61.4c-4.6-4.6-4.6-12.1 0-16.8l22.3-22.3c4.6-4.6 12.1-4.6 16.8 0l61.4 61.4 61.4-61.4c4.6-4.6 12.1-4.6 16.8 0l22.3 22.3c4.7 4.6 4.7 12.1 0 16.8z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;"
-                                        data-full-width="yes" style="width: 794.703px; left: 0px;">
-                                        <ul id="menu-1-bf74016" class="hfe-nav-menu">
-                                            <li id="menu-item-293"
-                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-7 current_page_item parent hfe-creative-menu">
-                                                <a href="/" class="hfe-menu-item">Home</a>
-                                            </li>
-                                            <li id="menu-item-36"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom parent hfe-creative-menu">
-                                                <a href="#broadband-plan" class="hfe-menu-item">Broadband Plan</a>
-                                            </li>
-                                            <li id="menu-item-34"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom parent hfe-creative-menu">
-                                                <a href="#services" class="hfe-menu-item">Services</a>
-                                            </li>
-                                            <li id="menu-item-793"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom parent hfe-creative-menu">
-                                                <a href="#hath-faqs" class="hfe-menu-item">FAQs</a>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <nav class="custom-mobile-nav hfe-nav-menu__layout-horizontal hfe-nav-menu__submenu-arrow">
+
+                        <!-- Mobile Toggle Button -->
+                        <button class="mobile-menu-toggle" aria-label="Menu Toggle">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </button>
+
+                        <!-- Navigation Menu -->
+                        <ul id="menu-1-bf74016" class="hfe-nav-menu">
+                            <li id="menu-item-293" class="menu-item current-menu-item hfe-creative-menu">
+                                <a href="/" class="hfe-menu-item">Home</a>
+                            </li>
+                            <li id="menu-item-36" class="menu-item hfe-creative-menu">
+                                <a href="#broadband-plan" class="hfe-menu-item">Broadband Plan</a>
+                            </li>
+                            <li id="menu-item-34" class="menu-item hfe-creative-menu">
+                                <a href="#services" class="hfe-menu-item">Services</a>
+                            </li>
+                            <li id="menu-item-793" class="menu-item hfe-creative-menu">
+                                <a href="#hath-faqs" class="hfe-menu-item">FAQs</a>
+                            </li>
+                        </ul>
+
+                    </nav>
+
+
+
+
+
+
                     <div class="elementor-element elementor-element-9c73f8a e-con-full e-flex e-con e-child"
                         data-id="9c73f8a" data-element_type="container">
                         <div class="elementor-element elementor-element-129111e elementor-button-info elementor-align-center elementor-widget elementor-widget-button"
@@ -219,193 +201,160 @@
 
             <section class="card-container">
 
-                <!-- Premium Plan -->
+                <!-- WFH Plans -->
                 <div class="premium-card">
+                    <div class="card-header">
+                        <h2 class="title-plan">WFH Plan <span class="icon">🏠</span></h2>
+                        <p class="speed"><span class="icon">⚡</span> 40 Mbps</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="price"><span class="icon">💰</span> Monthly Plan</p>
+                        <h3 class="amount">₹500/-</h3>
+                        <p class="price"><span class="icon">💰</span> Quarterly Plan</p>
+                        <h3 class="amount">₹1501/-</h3>
+                        <p class="price"><span class="icon">💰</span> 6-Monthly Plan</p>
+                        <h3 class="amount">₹3002/-</h3>
+                        <ul class="features">
+                            <li><span class="icon">📶</span> 5GHz Dual Band Router Free to Use*</li>
+                            <li><span class="icon">🎬</span> OTT combo plans available</li>
+                            <li><span class="icon">🎁</span> Pay for 11 months and get 12th month free</li>
+                            <li><span class="icon">⏱️</span> Available in 3, 6, and 12 month options</li>
+                            <li><span class="icon">🔧</span> Zero Installation Charges, No Security Deposit</li>
+                        </ul>
+                        <button class="btn-get">Get it Now <span class="icon">👉</span></button>
+                    </div>
+                </div>
 
+                <div class="premium-card">
+                    <div class="card-header">
+                        <h2 class="title-plan">WFH Plan <span class="icon">🏠</span></h2>
+                        <p class="speed"><span class="icon">⚡</span> 50 Mbps</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="price"><span class="icon">💰</span> Monthly Plan</p>
+                        <h3 class="amount">₹620/-</h3>
+                        <p class="price"><span class="icon">💰</span> Quarterly Plan</p>
+                        <h3 class="amount">₹1860/-</h3>
+                        <ul class="features">
+                            <li><span class="icon">📶</span> 5GHz Dual Band Router Free to Use*</li>
+                            <li><span class="icon">🎬</span> OTT combo plans available</li>
+                            <li><span class="icon">🎁</span> Pay for 11 months and get 12th month free</li>
+                            <li><span class="icon">⏱️</span> Available in 3, 6, and 12 month options</li>
+                            <li><span class="icon">🔧</span> Zero Installation Charges, No Security Deposit</li>
+                        </ul>
+                        <button class="btn-get">Get it Now <span class="icon">👉</span></button>
+                    </div>
+                </div>
+
+                <!-- Family Plans -->
+                <div class="premium-card">
+                    <div class="card-header">
+                        <h2 class="title-plan">Family Plan <span class="icon">👪</span></h2>
+                        <p class="speed"><span class="icon">⚡</span> 75 Mbps</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="price"><span class="icon">💰</span> Monthly Plan</p>
+                        <h3 class="amount">₹649/-</h3>
+                        <p class="price"><span class="icon">💰</span> Quarterly Plan</p>
+                        <h3 class="amount">₹1947/-</h3>
+                        <ul class="features">
+                            <li><span class="icon">📶</span> 5GHz Dual Band Router Free to Use*</li>
+                            <li><span class="icon">🎬</span> OTT combo plans available</li>
+                            <li><span class="icon">🎁</span> Pay for 11 months and get 12th month free</li>
+                            <li><span class="icon">⏱️</span> Available in 3, 6, and 12 month options</li>
+                            <li><span class="icon">🔧</span> Zero Installation Charges, No Security Deposit</li>
+                        </ul>
+                        <button class="btn-get">Get it Now <span class="icon">👉</span></button>
+                    </div>
+                </div>
+
+                <div class="premium-card">
+                    <div class="card-header">
+                        <h2 class="title-plan">Family Plan <span class="icon">👪</span></h2>
+                        <p class="speed"><span class="icon">⚡</span> 100 Mbps</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="price"><span class="icon">💰</span> Monthly Plan</p>
+                        <h3 class="amount">₹678/-</h3>
+                        <p class="price"><span class="icon">💰</span> Quarterly Plan</p>
+                        <h3 class="amount">₹2032/-</h3>
+                        <ul class="features">
+                            <li><span class="icon">📶</span> 5GHz Dual Band Router Free to Use*</li>
+                            <li><span class="icon">🎬</span> OTT combo plans available</li>
+                            <li><span class="icon">🎁</span> Pay for 11 months and get 12th month free</li>
+                            <li><span class="icon">⏱️</span> Available in 3, 6, and 12 month options</li>
+                            <li><span class="icon">🔧</span> Zero Installation Charges, No Security Deposit</li>
+                        </ul>
+                        <button class="btn-get">Get it Now <span class="icon">👉</span></button>
+                    </div>
+                </div>
+
+                <!-- Premium Plans -->
+                <div class="premium-card">
+                    <div class="card-header">
+                        <h2 class="title-plan">Premium Plan <span class="icon">⭐</span></h2>
+                        <p class="speed"><span class="icon">⚡</span> 150 Mbps</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="price"><span class="icon">💰</span> Monthly Plan</p>
+                        <h3 class="amount">₹708/-</h3>
+                        <p class="price"><span class="icon">💰</span> Quarterly Plan</p>
+                        <h3 class="amount">₹2124/-</h3>
+                        <ul class="features">
+                            <li><span class="icon">📶</span> 5GHz Dual Band Router Free to Use*</li>
+                            <li><span class="icon">🎬</span> OTT combo plans available</li>
+                            <li><span class="icon">🎁</span> Pay for 11 months and get 12th month free</li>
+                            <li><span class="icon">⏱️</span> Available in 3, 6, and 12 month options</li>
+                            <li><span class="icon">🔧</span> Zero Installation Charges, No Security Deposit</li>
+                        </ul>
+                        <button class="btn-get">Get it Now <span class="icon">👉</span></button>
+                    </div>
+                </div>
+
+                <div class="premium-card">
+                    <div class="card-header">
+                        <h2 class="title-plan">Premium Plan <span class="icon">⭐</span></h2>
+                        <p class="speed"><span class="icon">⚡</span> 200 Mbps</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="price"><span class="icon">💰</span> Monthly Plan</p>
+                        <h3 class="amount">₹854/-</h3>
+                        <p class="price"><span class="icon">💰</span> Quarterly Plan</p>
+                        <h3 class="amount">₹2563/-</h3>
+                        <ul class="features">
+                            <li><span class="icon">📶</span> 5GHz Dual Band Router Free to Use*</li>
+                            <li><span class="icon">🎬</span> OTT combo plans available</li>
+                            <li><span class="icon">🎁</span> Pay for 11 months and get 12th month free</li>
+                            <li><span class="icon">⏱️</span> Available in 3, 6, and 12 month options</li>
+                            <li><span class="icon">🔧</span> Zero Installation Charges, No Security Deposit</li>
+                        </ul>
+                        <button class="btn-get">Get it Now <span class="icon">👉</span></button>
+                    </div>
+                </div>
+
+                <div class="premium-card">
                     <div class="card-header">
                         <h2 class="title-plan">Premium Plan <span class="icon">⭐</span></h2>
                         <p class="speed"><span class="icon">⚡</span> 300 Mbps</p>
                     </div>
                     <div class="card-body">
-                        <p class="price"><span class="icon">💰</span> Effective Monthly Pricing</p>
-                        <h3 class="amount"><span class="icon">₹</span> 824*</h3>
+                        <p class="price"><span class="icon">💰</span> Monthly Plan</p>
+                        <h3 class="amount">₹972/-</h3>
+                        <p class="price"><span class="icon">💰</span> Quarterly Plan</p>
+                        <h3 class="amount">₹2917/-</h3>
                         <ul class="features">
                             <li><span class="icon">📶</span> 5GHz Dual Band Router Free to Use*</li>
                             <li><span class="icon">🎬</span> OTT combo plans available</li>
-                            <li><span class="icon">🎁</span> Pay for 11 months and get 12th month Free</li>
-                            <li><span class="icon">⏱️</span> Available in 3, 6 and 12 months options</li>
-                            <li><span class="icon">🔧</span> Zero Installation Charges on 3 months, 6 months and 12
-                                months No Security Deposit</li>
+                            <li><span class="icon">🎁</span> Pay for 11 months and get 12th month free</li>
+                            <li><span class="icon">⏱️</span> Available in 3, 6, and 12 month options</li>
+                            <li><span class="icon">🔧</span> Zero Installation Charges, No Security Deposit</li>
                         </ul>
                         <button class="btn-get">Get it Now <span class="icon">👉</span></button>
                     </div>
                 </div>
 
-                <!-- Family Plan -->
-                <div class="premium-card">
-                    <div class="card-header">
-                        <h2 class="title-plan">Family Plan <span class="icon">👪</span></h2>
-                        <p class="speed"><span class="icon">⚡</span> 200 Mbps</p>
-                    </div>
-                    <div class="card-body">
-                        <p class="price"><span class="icon">💰</span> Effective Monthly Pricing</p>
-                        <h3 class="amount"><span class="icon">₹</span> 724*</h3>
-                        <ul class="features">
-                            <li><span class="icon">📶</span> 5GHz Dual Band Router Free to Use*</li>
-                            <li><span class="icon">🎬</span> OTT combo plans available</li>
-                            <li><span class="icon">🎁</span> Pay for 11 months and get 12th month Free</li>
-                            <li><span class="icon">⏱️</span> Available in 3, 6 and 12 months options</li>
-                            <li><span class="icon">🔧</span> Zero Installation Charges on 3 months, 6 months and 12
-                                months No Security Deposit</li>
-                        </ul>
-                        <button class="btn-get">Get it Now <span class="icon">👉</span></button>
-                    </div>
-                </div>
-
-                <!-- WFH Plan -->
-                <div class="premium-card">
-                    <div class="card-header">
-                        <h2 class="title-plan">WFH Plan <span class="icon">🏠</span></h2>
-                        <p class="speed"><span class="icon">⚡</span> 150 Mbps</p>
-                    </div>
-                    <div class="card-body">
-                        <p class="price"><span class="icon">💰</span> Effective Monthly Pricing</p>
-                        <h3 class="amount"><span class="icon">₹</span> 600*</h3>
-                        <ul class="features">
-                            <li><span class="icon">📶</span> 5GHz Dual Band Router Free to Use*</li>
-                            <li><span class="icon">🎬</span> OTT combo plans available</li>
-                            <li><span class="icon">🎁</span> Pay for 11 months and get 12th month Free</li>
-                            <li><span class="icon">⏱️</span> Available in 3, 6 and 12 months options</li>
-                            <li><span class="icon">🔧</span> Zero Installation Charges on 3 months, 6 months and 12
-                                months No Security Deposit</li>
-                        </ul>
-                        <button class="btn-get">Get it Now <span class="icon">👉</span></button>
-                    </div>
-                </div>
-
-                <!-- Student Plan -->
-                <div class="premium-card">
-                    <div class="card-header">
-                        <h2 class="title-plan">Student Plan <span class="icon">🎓</span></h2>
-                        <p class="speed"><span class="icon">⚡</span> 100 Mbps</p>
-                    </div>
-                    <div class="card-body">
-                        <p class="price"><span class="icon">💰</span> Effective Monthly Pricing</p>
-                        <h3 class="amount"><span class="icon">₹</span> 499*</h3>
-                        <ul class="features">
-                            <li><span class="icon">📶</span> 5GHz Dual Band Router Free to Use*</li>
-                            <li><span class="icon">🎬</span> OTT combo plans available</li>
-                            <li><span class="icon">🎁</span> Pay for 11 months and get 12th month Free</li>
-                            <li><span class="icon">⏱️</span> Available in 3, 6 and 12 months options</li>
-                            <li><span class="icon">🔧</span> Zero Installation Charges on 3 months, 6 months and 12
-                                months No Security Deposit</li>
-                        </ul>
-                        <button class="btn-get">Get it Now <span class="icon">👉</span></button>
-                    </div>
-                </div>
-
-                <!-- Office Plan -->
-                <div class="premium-card">
-                    <div class="card-header">
-                        <h2 class="title-plan">Office Plan <span class="icon">🏢</span></h2>
-                        <p class="speed"><span class="icon">⚡</span> 350 Mbps</p>
-                    </div>
-                    <div class="card-body">
-                        <p class="price"><span class="icon">💰</span> Effective Monthly Pricing</p>
-                        <h3 class="amount"><span class="icon">₹</span> 950*</h3>
-                        <ul class="features">
-                            <li><span class="icon">📶</span> Dual Band Router Free to Use*</li>
-                            <li><span class="icon">🎬</span> OTT combo plans available</li>
-                            <li><span class="icon">🎁</span> Pay for 11 months and get 12th month Free</li>
-                            <li><span class="icon">⏱️</span> Available in 3, 6 and 12 months options</li>
-                            <li><span class="icon">🔧</span> Zero Installation Charges on 3 months, 6 months and 12
-                                months No Security Deposit</li>
-                        </ul>
-                        <button class="btn-get">Get it Now <span class="icon">👉</span></button>
-                    </div>
-                </div>
-
-                <!-- Enterprise Plan -->
-                <div class="premium-card">
-                    <div class="card-header">
-                        <h2 class="title-plan">Enterprise Plan <span class="icon">🏢</span></h2>
-                        <p class="speed"><span class="icon">⚡</span> 500 Mbps</p>
-                    </div>
-                    <div class="card-body">
-                        <p class="price"><span class="icon">💰</span> Effective Monthly Pricing</p>
-                        <h3 class="amount"><span class="icon">₹</span> 1500*</h3>
-                        <ul class="features">
-                            <li><span class="icon">📶</span> Dual Band Router Free to Use*</li>
-                            <li><span class="icon">🎬</span> OTT combo plans available</li>
-                            <li><span class="icon">🎁</span> Pay for 11 months and get 12th month Free</li>
-                            <li><span class="icon">⏱️</span> Available in 3, 6 and 12 months options</li>
-                            <li><span class="icon">🔧</span> Zero Installation Charges on 3 months, 6 months and 12
-                                months No Security Deposit</li>
-                        </ul>
-                        <button class="btn-get">Get it Now <span class="icon">👉</span></button>
-                    </div>
-                </div>
-                <!-- Family Plan -->
-                <div class="premium-card">
-                    <div class="card-header">
-                        <h2 class="title-plan">Family Plan <span class="icon">👪</span></h2>
-                        <p class="speed"><span class="icon">⚡</span> 200 Mbps</p>
-                    </div>
-                    <div class="card-body">
-                        <p class="price"><span class="icon">💰</span> Effective Monthly Pricing</p>
-                        <h3 class="amount"><span class="icon">₹</span> 724*</h3>
-                        <ul class="features">
-                            <li><span class="icon">📶</span> 5GHz Dual Band Router Free to Use*</li>
-                            <li><span class="icon">🎬</span> OTT combo plans available</li>
-                            <li><span class="icon">🎁</span> Pay for 11 months and get 12th month Free</li>
-                            <li><span class="icon">⏱️</span> Available in 3, 6 and 12 months options</li>
-                            <li><span class="icon">🔧</span> Zero Installation Charges on 3 months, 6 months and 12
-                                months No Security Deposit</li>
-                        </ul>
-                        <button class="btn-get">Get it Now <span class="icon">👉</span></button>
-                    </div>
-                </div>
-
-                <!-- WFH Plan -->
-                <div class="premium-card">
-                    <div class="card-header">
-                        <h2 class="title-plan">WFH Plan <span class="icon">🏠</span></h2>
-                        <p class="speed"><span class="icon">⚡</span> 150 Mbps</p>
-                    </div>
-                    <div class="card-body">
-                        <p class="price"><span class="icon">💰</span> Effective Monthly Pricing</p>
-                        <h3 class="amount"><span class="icon">₹</span> 600*</h3>
-                        <ul class="features">
-                            <li><span class="icon">📶</span> 5GHz Dual Band Router Free to Use*</li>
-                            <li><span class="icon">🎬</span> OTT combo plans available</li>
-                            <li><span class="icon">🎁</span> Pay for 11 months and get 12th month Free</li>
-                            <li><span class="icon">⏱️</span> Available in 3, 6 and 12 months options</li>
-                            <li><span class="icon">🔧</span> Zero Installation Charges on 3 months, 6 months and 12
-                                months No Security Deposit</li>
-                        </ul>
-                        <button class="btn-get">Get it Now <span class="icon">👉</span></button>
-                    </div>
-                </div> <!-- Family Plan -->
-                <div class="premium-card">
-                    <div class="card-header">
-                        <h2 class="title-plan">Family Plan <span class="icon">👪</span></h2>
-                        <p class="speed"><span class="icon">⚡</span> 200 Mbps</p>
-                    </div>
-                    <div class="card-body">
-                        <p class="price"><span class="icon">💰</span> Effective Monthly Pricing</p>
-                        <h3 class="amount"><span class="icon">₹</span> 724*</h3>
-                        <ul class="features">
-                            <li><span class="icon">📶</span> 5GHz Dual Band Router Free to Use*</li>
-                            <li><span class="icon">🎬</span> OTT combo plans available</li>
-                            <li><span class="icon">🎁</span> Pay for 11 months and get 12th month Free</li>
-                            <li><span class="icon">⏱️</span> Available in 3, 6 and 12 months options</li>
-                            <li><span class="icon">🔧</span> Zero Installation Charges on 3 months, 6 months and 12
-                                months No Security Deposit</li>
-                        </ul>
-                        <button class="btn-get">Get it Now <span class="icon">👉</span></button>
-                    </div>
-                </div>
             </section>
+
 
 
             <!-- image banner section -->
@@ -489,7 +438,7 @@
             <!-- Small Banner Section -->
             <div class="business-banner">
                 <h2>Discover the Ideal Broadband Solution for Your Business</h2>
-                <a href="tel:+911234567890" class="call-btn">CALL US NOW!</a>
+                <a href="tel:8109958000" class="call-btn">CALL US NOW!</a>
             </div>
 
             <!-- FAQs Section -->
@@ -690,7 +639,7 @@
 
                 if (data.success) {
                     document.getElementById("response").innerHTML =
-                    "<span class='success-message'>✔ Form Submitted Successfully!</span>";
+                        "<span class='success-message'>✔ Form Submitted Successfully!</span>";
                     // 🔥 RESET THE FORM
                     document.getElementById("customForm").reset();
                 } else {
