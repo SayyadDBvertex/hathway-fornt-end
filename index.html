@@ -147,49 +147,35 @@
                             </div>
                         </div>
                     </div>
-                    <div class="elementor-element elementor-element-7c2d732 e-con-full e-flex e-con e-child"
-                        data-id="7c2d732" data-element_type="container">
-                        <div class="elementor-element elementor-element-115a1af hathway-c-form elementor-widget elementor-widget-ucaddon_contact_form_7"
-                            data-id="115a1af" data-element_type="widget"
-                            data-widget_type="ucaddon_contact_form_7.default">
-                            <div class="elementor-widget-container">
+                    <div class="form-wrapper">
+                        <h2>New Connection Request</h2>
 
+                        <form id="customForm">
 
-                                <!-- ===== Simple Clean Form ===== -->
-                                <div class="form-wrapper">
-                                    <h2>New Connection Request</h2>
+                            <label>Full Name</label>
+                            <input type="text" name="name" id="name" placeholder="Enter your name" required />
 
-                                    <form id="customForm">
+                            <label>Phone Number</label>
+                            <input type="tel" name="mobile" id="mobile" placeholder="Enter your mobile number"
+                                pattern="[0-9]{10}" required />
 
-                                        <label>Full Name</label>
-                                        <input type="text" name="name" id="name" placeholder="Enter your name"
-                                            required />
+                            <label>Email Address</label>
+                            <input type="email" name="email" id="email" placeholder="Enter your email address"
+                                required />
 
-                                        <label>Phone Number</label>
-                                        <input type="tel" name="mobile" id="mobile"
-                                            placeholder="Enter your mobile number" pattern="[0-9]{10}" required />
+                            <label>Address</label>
+                            <textarea name="address" id="address" placeholder="Enter your full address"
+                                required></textarea>
 
-                                        <label>Address</label>
-                                        <textarea name="address" id="address" placeholder="Enter your full address"
-                                            required></textarea>
+                            <button type="submit" id="submitBtn">
+                                <span id="btnText">Submit</span>
+                                <span class="loader" id="btnLoader" style="display:none;"></span>
+                            </button>
+                        </form>
 
-                                        <button type="submit">Submit</button>
-                                    </form>
-
-                                    <p id="response"></p>
-                                </div>
-
-
-
-
-
-
-
-
-                                <!-- end Contact Form 7 -->
-                            </div>
-                        </div>
+                        <p id="response"></p>
                     </div>
+
                 </div>
 
             </div>
@@ -223,7 +209,7 @@
                     </div>
                 </div>
 
-               
+
 
                 <!-- Family Plans -->
                 <div class="premium-card">
@@ -268,7 +254,7 @@
                     </div>
                 </div>
                 <!-- WFH PLANS -->
-                 <div class="premium-card">
+                <div class="premium-card">
                     <div class="card-header">
                         <h2 class="title-plan">WFH Plan <span class="icon">🏠</span></h2>
                         <p class="speed"><span class="icon">⚡</span> 50 Mbps</p>
@@ -288,7 +274,7 @@
                         <button class="btn-get">Get it Now <span class="icon">👉</span></button>
                     </div>
                 </div>
-                  <!-- Family plan  -->
+                <!-- Family plan  -->
                 <div class="premium-card">
                     <div class="card-header">
                         <h2 class="title-plan">Family Plan <span class="icon">👪</span></h2>
@@ -623,9 +609,10 @@
             const formData = {
                 name: document.getElementById("name").value,
                 mobile: document.getElementById("mobile").value,
+                email: document.getElementById("email").value,
                 address: document.getElementById("address").value
             };
-            // http://localhost:3001/api/
+            // http://localhost:3025/api/
             //"https://api.hathway.graphicsvolume.com/api"
             try {
                 const req = await fetch("https://api.hathway.graphicsvolume.com/api", {
@@ -653,6 +640,20 @@
                     "<span style='color:red;'>Server Error: " + err.message + "</span>";
             }
         });
+        document.getElementById("customForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            document.getElementById("btnText").style.display = "none";
+            document.getElementById("btnLoader").style.display = "inline-block";
+
+
+            setTimeout(() => {
+                document.getElementById("response").innerText = "Form submitted successfully!";
+                document.getElementById("btnText").style.display = "inline";
+                document.getElementById("btnLoader").style.display = "none";
+            }, 2000);
+        });
+
 
 
     </script>
