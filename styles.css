@@ -551,13 +551,20 @@ body.dark-theme .premium-card {
 .title-plan {
     font-size: 1.3rem;
     font-weight: 700;
+    text-align: center;
 }
 
 .speed {
     margin-top: 5px;
     font-weight: 500;
     color: #e0e0e0;
+    display: flex;
+    justify-content: center;   /* center horizontally */
+    align-items: center;       /* keep icon & text aligned */
+    gap: 6px;                  /* space between icon and text */
+    text-align: center;
 }
+
 
 /* Card Body */
 .card-body {
