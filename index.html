@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <!-- Font Awesome CDN -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -164,10 +164,7 @@
                                 pattern="[0-9]{10}" required aria-describedby="mobileError" />
                             <span class="error" id="mobileError" aria-live="polite"></span>
 
-                            <!-- <label>Email Address</label>
-                            <input type="email" name="email" id="email" placeholder="Enter your email address"
-                                required aria-describedby="emailError" />
-                            <span class="error" id="emailError" aria-live="polite"></span> -->
+                            <!-- Email field removed per request -->
 
                             <label>Address</label>
                             <input name="address" id="address" placeholder="Enter your full address"
@@ -631,7 +628,7 @@
             const form = document.getElementById("customForm");
             const nameEl = document.getElementById("name");
             const mobileEl = document.getElementById("mobile");
-            const emailEl = document.getElementById("email");
+            // const emailEl = document.getElementById("email"); // commented out (email removed)
             const addressEl = document.getElementById("address");
 
             function setError(inputEl, message) {
@@ -664,6 +661,7 @@
                 return '';
             }
 
+            /*
             function validateEmail() {
                 const v = emailEl.value.trim();
                 if (!v) return 'Email is required';
@@ -672,6 +670,7 @@
                 if (!re.test(v)) return 'Enter a valid email address';
                 return '';
             }
+            */
 
             function validateAddress() {
                 const v = addressEl.value.trim();
@@ -683,25 +682,25 @@
             function validateForm() {
                 const nameErr = validateName();
                 const mobileErr = validateMobile();
-                const emailErr = validateEmail();
+                // const emailErr = validateEmail(); // commented out (email removed)
                 const addressErr = validateAddress();
 
                 if (nameErr) setError(nameEl, nameErr); else clearError(nameEl);
                 if (mobileErr) setError(mobileEl, mobileErr); else clearError(mobileEl);
-                if (emailErr) setError(emailEl, emailErr); else clearError(emailEl);
+                // if (emailErr) setError(emailEl, emailErr); else clearError(emailEl); // commented out
                 if (addressErr) setError(addressEl, addressErr); else clearError(addressEl);
 
-                return !(nameErr || mobileErr || emailErr || addressErr);
+                return !(nameErr || mobileErr || addressErr);
             }
 
             // Real-time validation
-            [nameEl, mobileEl, emailEl, addressEl].forEach(el => {
+            [nameEl, mobileEl, addressEl].forEach(el => {
                 el.addEventListener('input', () => {
                     // re-validate this field only for better UX
                     switch (el.id) {
                         case 'name': if (!validateName()) clearError(el); else setError(el, validateName()); break;
                         case 'mobile': if (!validateMobile()) clearError(el); else setError(el, validateMobile()); break;
-                        case 'email': if (!validateEmail()) clearError(el); else setError(el, validateEmail()); break;
+                        // case 'email': if (!validateEmail()) clearError(el); else setError(el, validateEmail()); break; // commented out
                         case 'address': if (!validateAddress()) clearError(el); else setError(el, validateAddress()); break;
                     }
                 });
@@ -731,7 +730,7 @@
             const formData = {
                 name: document.getElementById("name").value,
                 mobile: document.getElementById("mobile").value,
-                email: document.getElementById("email").value,
+                // email: document.getElementById("email").value, // commented out (email removed)
                 address: document.getElementById("address").value
             };
             // http://localhost:3025/api/
@@ -753,7 +752,7 @@ if (data.success) {
     document.getElementById("customForm").reset();
 
     // CLEAR ERROR STATE
-    ['name', 'mobile', 'email', 'address'].forEach(id => {
+    ['name', 'mobile', 'address'].forEach(id => {
         const el = document.getElementById(id);
         if (el) {
             el.style.borderColor = '';
@@ -772,6 +771,7 @@ if (data.success) {
                     const msg = data.message || data.error || 'Unknown server error';
                     document.getElementById("response").innerHTML = `<span style='color:red;'>✘ ${msg}</span>`;
                     // If server reports duplicate email or similar, highlight email field
+                    /*
                     if (msg.toLowerCase().includes('email')) {
                         const emailEl = document.getElementById('email');
                         if (emailEl) {
@@ -779,6 +779,7 @@ if (data.success) {
                             document.getElementById('emailError').textContent = msg;
                         }
                     }
+                    */
                 }
                 hideLoader(); // 🔥 Stop loader after success or error
             } catch (err) {
